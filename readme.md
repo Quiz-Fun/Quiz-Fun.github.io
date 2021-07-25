@@ -1,7 +1,7 @@
 # Quiz Fun
 System for creating, editing and managing quizes.
 
-## Функционалност
+## Functionality
 * Registering users
 * Being able to browse and take quizes from other users
 * Quizes with various topics
@@ -10,7 +10,7 @@ System for creating, editing and managing quizes.
 * Interactive editor for quizes
 * Interactive and flexible UX
 
-## Технологии
+## Technologies
 * HTML, CSS, JavaScript
 * lit-html, page
 * GitHub Pages, Back4app

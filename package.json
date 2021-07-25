@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/quiz-fun/quiz-fun.github.io#readme",
   "dependencies": {
-    "lit-html": "1.4.1"
+    "lit-html": "1.4.1",
+    "page": "1.11.6"
   }
 }

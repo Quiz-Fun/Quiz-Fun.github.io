@@ -1,51 +1,35 @@
-# Quiz Fever
-Система за създадване, управление, и попълване на тестове със свободен достъп.
+# Quiz Fun
+System for creating, editing and managing quizes.
 
 ## Функционалност
-* Регистрация на потребители
-* Възможност за разглеждане и решаване на тестове от други потребители
-* Различни теми, свързани с тестовете
-* Възможност за филтриране по тема и търсене по заглавие
-* Водене статистика за всеки потребител и тест
-* Интерактивен редактор за тестове
-* Интерактивен, гъвкав UX
+* Registering users
+* Being able to browse and take quizes from other users
+* Quizes with various topics
+* Ability to filter quizes based on topics and search by title
+* Statistics for all users and quizes
+* Interactive editor for quizes
+* Interactive and flexible UX
 
 ## Технологии
 * HTML, CSS, JavaScript
 * lit-html, page
 * GitHub Pages, Back4app
 
-## Екрани (Страници)
+## Views (Pages)
 * **Welcome Screen** (landing page)
-* **Login/Regsiter** - регистрация с мейл, потребителско име, парола
-* **Quiz Browser** - списък с тестове и възможност за търсене по заглавие и филтрация по тема
-* **Quiz Details** - допълнително описание, статистика за теста, информация за автора и възможност за стартиране на теста
-* **Quiz Contest Mode** - отговаряне на въпроси, всеки въпрос е в отделен изглед, възможност за свободно преминаване от въпрос на въпрос, възможност за рестартиране на теста
-* **Quiz Results** - обобщение на резултатите, възможност за преглеждане на сгрешените въпроси
-* **Profile Page** - информация за създадени тестове и всички решени тестове
-* **Quiz Editor** - интегриран редактор за тестове, въпроси и отговори
+* **Login/Regsiter** - register with email, username, password
+* **Quiz Browser** - list with quizes and the ablility to search by title and filter by topic
+* **Quiz Details** - additional information, statistics for the quiz, information about the author and the ability to take the quiz
+* **Quiz Contest Mode** - answer questions, one question displayed at a time, the ability to go to the next or previous question, the ability to restart the quiz
+* **Quiz Results** - result summery, the ability to review wrongly answered questions
+* **Profile Page** - information about quizes created and all quizes taken
+* **Quiz Editor** - integrated editor for quizes, questions and answers
 
-## План за изпълнение
-### Part 1
-* Създаване и настройване на приложение в Back4app
-* Деплойване на приложение в GitHub Pages
-* Login/Register страница
-* Quiz Editor функционалност
-
-### Part 2
-* Довършване на структура и стилизация
-* Welcome Screen
-* Quiz Browser
-* Quiz Details
-* Quiz Contest Mode
-* Quiz Results
-* Profile Page
-
-## Реализация
-### Структура на данните
-#### Колекции
-* Sessions (служебна)
-* Users (служебна)
+## Initialization
+### Data structure
+#### Collections
+* Sessions
+* Users
 ```javascript
 {
     email: String,
@@ -78,8 +62,8 @@
 }
 ```
 
-#### Контрол на достъпа
-* Гостите могат да се регистрират, да преглеждат каталога, детайлите на тестовете и профилните страници на потребителите
-* Регистрираните потребители могат да решават тестове, да преглеждат резултатите си и да създават и редактират тестове
-* Само създателя на един тест може да го редактира и изтрива
-* Всеки регистриран потребител може да решава чужд тест
+#### Access Control
+* Guests can register, view catalog, additional info for quizes and profile page for users
+* Registered users can take quizes, review personal scores, create and edit quizes
+* Only quiz creator can edit or delete it
+* Every registered user can take a quiz

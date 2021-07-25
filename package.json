@@ -1,0 +1,23 @@
+{
+  "name": "Quiz",
+  "version": "1.0.0",
+  "description": "Система за създадване, управление, и попълване на тестове със свободен достъп.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/quiz-fun/quiz-fun.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/quiz-fun/quiz-fun.github.io/issues"
+  },
+  "homepage": "https://github.com/quiz-fun/quiz-fun.github.io#readme",
+  "dependencies": {
+    "lit-html": "1.4.1"
+  }
+}

@@ -1,6 +1,10 @@
+import { setUserData, clearUserData, getUserData } from '../util.js';
+
 
 export const settings = {
-    host: ''
+    host: '',
+    appId: '',
+    apiKey: '',
 };
 
 async function request(url, options) {
@@ -28,18 +32,18 @@ function getOptions(method = 'get', body) {
     const options = {
         method,
         headers: {
-            'X-Parse-Application-Id': 'lB4vokFcGlvUN9ZwRurQ5cEH0VHve8HunjU0G8mW',
-            'X-Parse-REST-API-Key': 'uDxILt38Nwsh2iR1aKBp73Poj65VvMeCf6aIrGrN'
+            'X-Parse-Application-Id': settings.appId,
+            'X-Parse-REST-API-Key': settings.apiKey
         }
     };
 
-    const token = sessionStorage.getItem('authToken');
-    if (token != null) {
-        options.headers['X-Parse-Session-Token'] = token;
+    const user = getUserData();
+    if (user) {
+        options.headers['X-Parse-Session-Token'] = user.sessionToken;
     }
 
     if (body) {
-        options.headers['Content-type'] = 'application/json';
+        options.headers['Content-Type'] = 'application/json';
         options.body = JSON.stringify(body);
     }
 
@@ -65,10 +69,7 @@ export async function del(url) {
 export async function login(username, password) {
     const result = await post(settings.host + '/login', { username, password });
 
-    sessionStorage.setItem('username', result.username);
-    sessionStorage.setItem('authToken', result.sessionToken);
-    sessionStorage.setItem('userId', result.objectId);
-
+    setUserData(Object.assign({}, result, { username }));
 
     return result;
 }
@@ -76,21 +77,15 @@ export async function login(username, password) {
 export async function register(email, username, password) {
     const result = await post(settings.host + '/users', { email, username, password });
 
-    sessionStorage.setItem('username', username);
-    sessionStorage.setItem('authToken', result.sessionToken);
-    sessionStorage.setItem('userId', result.objectId);
-
+    setUserData(Object.assign({}, result, { username }));
 
     return result;
 }
 
 export async function logout() {
-    const result = await post(settings.host + '/logout', {});
+    const result = post(settings.host + '/logout', {});
 
-    sessionStorage.removeItem('username');
-    sessionStorage.removeItem('authToken');
-    sessionStorage.removeItem('userId');
-
+    clearUserData();
 
     return result;
 }
